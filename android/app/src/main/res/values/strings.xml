@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Carga Académica</string>
+    <string name="title_activity_main">Carga Académica</string>
+    <string name="package_name">co.edu.cul.cargaacademica</string>
+    <string name="custom_url_scheme">co.edu.cul.cargaacademica</string>
+</resources>

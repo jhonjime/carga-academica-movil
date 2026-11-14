@@ -1,0 +1,263 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Estilos globales – Carga Académica (web + app móvil Capacitor)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    --marca: #0f3460;
+    --marca-oscuro: #0b2447;
+    --marca-claro: #1d5aa8;
+    --fondo-app: #f3f6fb;
+
+    /* Zonas seguras (notch, barra de estado y barra de gestos de Android).
+       Capacitor 8 inyecta --safe-area-inset-*; env() cubre el resto de casos. */
+    --sat: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px));
+    --sab: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));
+    --sal: max(env(safe-area-inset-left, 0px), var(--safe-area-inset-left, 0px));
+    --sar: max(env(safe-area-inset-right, 0px), var(--safe-area-inset-right, 0px));
+
+    --bs-primary: #0f3460;
+    --bs-primary-rgb: 15, 52, 96;
+    --bs-link-color: #1d5aa8;
+    --bs-link-color-rgb: 29, 90, 168;
+    --bs-body-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--fondo-app);
+    padding-left: var(--sal);
+    padding-right: var(--sar);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Botón primario con el color institucional */
+.btn-primary {
+    --bs-btn-bg: #0f3460;
+    --bs-btn-border-color: #0f3460;
+    --bs-btn-hover-bg: #0b2447;
+    --bs-btn-hover-border-color: #0b2447;
+    --bs-btn-active-bg: #0b2447;
+    --bs-btn-active-border-color: #0b2447;
+    --bs-btn-disabled-bg: #0f3460;
+    --bs-btn-disabled-border-color: #0f3460;
+}
+
+.bg-primary {
+    background-color: #0f3460 !important;
+}
+
+/* SweetAlert2 con la misma identidad visual */
+.swal2-popup {
+    border-radius: 20px !important;
+    font-family: var(--bs-body-font-family);
+}
+
+.swal2-styled {
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+}
+
+.swal2-container.swal2-bottom .toast-salir {
+    margin-bottom: calc(80px + var(--sab)) !important;
+    background: #1f2a3a !important;
+    color: #fff !important;
+    border-radius: 999px !important;
+    padding: 0.5rem 1rem !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+}
+
+.toast-salir .swal2-title {
+    color: #fff !important;
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+}
+
+/* Transición entre pantallas (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.18s;
+}
+
+/* Evita el desplazamiento del fondo con el menú lateral abierto */
+html.menu-abierto,
+html.menu-abierto body {
+    overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Celular y tableta (< 992 px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 991.98px) {
+    /* Espacio para la barra de navegación inferior */
+    body.con-barra-inferior {
+        padding-bottom: calc(72px + var(--sab));
+    }
+
+    html.teclado-abierto body.con-barra-inferior {
+        padding-bottom: 0;
+    }
+
+    /* Menos aire vertical en las pantallas: el espacio vale oro en un celular */
+    main.p-4 {
+        padding: 1rem 0.35rem 1.5rem !important;
+    }
+
+    main.bg-light {
+        background-color: transparent !important;
+    }
+
+    main.py-5,
+    main.py-4 {
+        padding-top: 1rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    main .container,
+    main .container-fluid {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    main .min-vh-100,
+    main.min-vh-100 {
+        min-height: auto !important;
+    }
+
+    .card {
+        border-radius: 18px;
+    }
+
+    /* Campos de formulario más cómodos para el dedo (y sin zoom automático) */
+    .form-control,
+    .form-select {
+        min-height: 46px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+
+    .form-control-sm,
+    .form-select-sm {
+        min-height: 40px;
+        font-size: 15px;
+    }
+
+    textarea.form-control {
+        min-height: 96px;
+    }
+
+    .btn {
+        border-radius: 12px;
+    }
+
+    .btn-lg {
+        min-height: 50px;
+    }
+
+    /* Tablas: desplazamiento horizontal suave y texto compacto */
+    .table-responsive {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .table {
+        font-size: 0.86rem;
+    }
+
+    .table > :not(caption) > * > * {
+        padding: 0.6rem 0.65rem !important;
+    }
+
+    .table thead th {
+        white-space: nowrap;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #5b6b82;
+    }
+
+    /* Controles de DataTables apilados y centrados */
+    div.dt-container .dt-layout-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    div.dt-container .dt-layout-cell {
+        width: 100%;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    div.dt-container .dt-paging .pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    div.dt-container .dt-info {
+        font-size: 0.8rem;
+        color: #6b7a90;
+    }
+
+    .boton-accion {
+        padding: 6px 10px !important;
+        font-size: 0.8rem;
+    }
+
+    /* Pestañas (nav-tabs/pills) con desplazamiento horizontal */
+    .nav-tabs,
+    .nav-pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-tabs::-webkit-scrollbar,
+    .nav-pills::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-tabs .nav-link,
+    .nav-pills .nav-link {
+        white-space: nowrap;
+    }
+
+    /* SweetAlert más cómodo en pantallas pequeñas */
+    .swal2-popup:not(.swal2-toast) {
+        width: calc(100vw - 32px) !important;
+        max-width: 420px;
+        padding: 1.25rem 1rem !important;
+    }
+
+    .swal2-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .swal2-actions .swal2-styled {
+        flex: 1 1 auto;
+        margin: 0 !important;
+        min-height: 44px;
+    }
+}
+
+/* Dentro del APK: sin selección accidental de texto en elementos de interfaz */
+html.es-nativo .barra-inferior,
+html.es-nativo .cabecera,
+html.es-nativo .menu-lateral,
+html.es-nativo .btn {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}
