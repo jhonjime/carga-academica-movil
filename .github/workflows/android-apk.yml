@@ -40,6 +40,8 @@ jobs:
 
       - name: Instalar Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 11076708
 
       - name: Instalar dependencias
         run: npm ci
