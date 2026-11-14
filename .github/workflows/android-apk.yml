@@ -38,10 +38,8 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Instalar Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          cmdline-tools-version: 11076708
+      - name: Aceptar licencias del Android SDK
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
       - name: Instalar dependencias
         run: npm ci
@@ -56,10 +54,10 @@ jobs:
         working-directory: android
         run: |
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon --stacktrace
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Renombrar APK
-        run: cp android/app/build/outputs/apk/release/app-release.apk CargaAcademica.apk
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk CargaAcademica.apk
 
       - name: Publicar APK como artefacto
         uses: actions/upload-artifact@v4
