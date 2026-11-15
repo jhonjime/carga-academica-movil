@@ -3,9 +3,9 @@
     import { onMount } from 'svelte';
     import Alerta from '$lib/components/Alerta.svelte';
     import BtnSugerencias from '$lib/components/btnSugerencias.svelte';
-    import Navbar from '$lib/components/navbar.svelte';
-    import Footer from '$lib/components/footer.svelte';
-    import Header from '$lib/components/header.svelte';
+    import Navbar from '$lib/components/Navbar.svelte';
+    import Footer from '$lib/components/Footer.svelte';
+    import Header from '$lib/components/Header.svelte';
     import PageHeader from '$lib/components/PageHeader.svelte';
 
     import { evaluacionDocenteApi } from '$lib/api/CargaDocenteApi.js';

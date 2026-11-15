@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte';
-    import Header from '$lib/components/header.svelte';
-    import Navbar from '$lib/components/navbar.svelte';
-    import Footer from '$lib/components/footer.svelte';
+    import Header from '$lib/components/Header.svelte';
+    import Navbar from '$lib/components/Navbar.svelte';
+    import Footer from '$lib/components/Footer.svelte';
     import BtnSugerencias from '$lib/components/btnSugerencias.svelte';
     import { peticion, usuariosApi, autenticacionApi } from '$lib/api/CargaDocenteApi.js';
 

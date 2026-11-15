@@ -1,9 +1,9 @@
 <script>
     import { onMount } from 'svelte';
     import { peticion } from '$lib/api/CargaDocenteApi.js';
-    import Header from '$lib/components/header.svelte';
-    import Navbar from '$lib/components/navbar.svelte';
-    import Footer from '$lib/components/footer.svelte';
+    import Header from '$lib/components/Header.svelte';
+    import Navbar from '$lib/components/Navbar.svelte';
+    import Footer from '$lib/components/Footer.svelte';
 
     const COLOR = '#0f3460';
     const ACCIONES = [
