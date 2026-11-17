@@ -44,7 +44,7 @@ export const MODULOS = [
         modulos: ['Carga Docente']
     },
     {
-        ruta: '/Estructura_Académica',
+        ruta: '/Estructura_Academica',
         texto: 'Estructura Académica',
         corto: 'Estructura',
         icono: 'bi-diagram-3',
@@ -60,7 +60,7 @@ export const MODULOS = [
         modulos: ['Horarios Grupos']
     },
     {
-        ruta: '/Evaluación_Desempeño',
+        ruta: '/Evaluacion_Desempeno',
         texto: 'Evaluación Docente',
         corto: 'Evaluar',
         icono: 'bi-star',

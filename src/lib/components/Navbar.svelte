@@ -13,10 +13,10 @@
     // Orden de prioridad para los accesos rápidos de la barra inferior.
     const PRIORIDAD = [
         '/carga_docente',
-        '/Evaluación_Desempeño',
+        '/Evaluacion_Desempeno',
         '/Analitica',
         '/Grupos_Horarios',
-        '/Estructura_Académica',
+        '/Estructura_Academica',
         '/asignar_evaluacion',
         '/usuario',
         '/rol',

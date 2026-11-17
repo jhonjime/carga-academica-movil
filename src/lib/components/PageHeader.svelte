@@ -18,7 +18,7 @@
             titulo: 'Carga docente',
             descripcion: 'Gestión de asignaciones, grupos y horarios docentes.'
         },
-        '/Estructura_Académica': {
+        '/Estructura_Academica': {
             titulo: 'Estructura académica',
             descripcion: 'Gestión de asignaturas, facultades y programas académicos.'
         },
@@ -26,7 +26,7 @@
             titulo: 'Grupos',
             descripcion: 'Administración de grupos por período académico.'
         },
-        '/Evaluación_Desempeño': {
+        '/Evaluacion_Desempeno': {
             titulo: 'Evaluación docente',
             descripcion: 'Califica cada pregunta y comparte tu retroalimentación.'
         },
@@ -53,7 +53,7 @@
         
     };
 
-    // Minúsculas, sin tildes ni barra final, para que /Estructura_Académica
+    // Minúsculas, sin tildes ni barra final, para que /Estructura_Academica
     // coincida aunque el navegador la codifique distinto.
     const limpiar = (ruta) => {
         let r = ruta;

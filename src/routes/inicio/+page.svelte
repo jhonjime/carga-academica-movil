@@ -117,7 +117,7 @@
             descripcion:
                 'Gestión de facultades, programas, planes de estudio y asignaturas.',
             icono: 'bi-diagram-3-fill',
-            ruta: '/Estructura_Académica',
+            ruta: '/Estructura_Academica',
             alias: [
                 'estructura academica',
                 'facultades',
@@ -145,7 +145,7 @@
             descripcion:
                 'Encuestas de par académico, autoevaluación y evaluación estudiantil.',
             icono: 'bi-star-fill',
-            ruta: '/Evaluación_Desempeño',
+            ruta: '/Evaluacion_Desempeno',
             alias: [
                 'evaluacion docente',
                 'evaluacion de desempeno',
