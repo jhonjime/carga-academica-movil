@@ -135,3 +135,16 @@ La URL de la API se puede cambiar creando un archivo `.env` (ver `.env.example`)
 
 SvelteKit 5 · Svelte 5 (runes) · Vite · Bootstrap 5 · Bootstrap Icons · DataTables ·
 SweetAlert2 · **Capacitor 8** (Android).
+
+## Publicar en Netlify
+
+Este proyecto está configurado como una SPA estática. Para publicarlo desde un repositorio Git en Netlify:
+
+1. Selecciona como **Base directory**: `CargaAcademica-Movil/carga-academica-movil` (si esa es la estructura que conserva el repositorio).
+2. **Build command**: `npm run build`.
+3. **Publish directory**: `build`.
+4. Usa Node.js 22; esta versión también está indicada en `netlify.toml`.
+
+Si subes únicamente la carpeta `carga-academica-movil` como raíz del repositorio, deja **Base directory** vacío. No publiques el código fuente mediante arrastrar el ZIP a Deploys: ese método requiere subir el contenido ya compilado de `build/`. Para que Netlify instale las dependencias, el repositorio debe incluir `package.json` y `package-lock.json`; no es necesario subir `node_modules`.
+
+La configuración de `adapter-static` genera `build/index.html` como fallback para las rutas de la SPA. El archivo `static/_redirects` también se copia al resultado publicado. La carpeta Android y `capacitor.config.json` se mantienen; Capacitor continúa usando `build` como `webDir`.
